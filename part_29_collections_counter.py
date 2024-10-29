@@ -1,17 +1,17 @@
 from collections import Counter
 
-number_of_pairs = input("pairs number: ")
-shoes_numbers = input("shoes numbers: ")
-i = 0
-clients = int(input("clients: "))
+X = int(input())
+S = Counter(map(int, input().split()))
+N = int(input())
 
-while i < clients:
-    pay_list = list(map(int, input("shoes number, cost ").split()))
-    i =+ 1
+earnings = 0
 
-shoes_numbers = list(map(int, shoes_numbers.split()))
+for customer in range(N):
+    size, x_i = map(int, input().split())
+    if size in S and S[size] > 0:
+        S[size] -= 1
+        earnings += x_i
 
-salary = 0
+print(earnings)
 
-print(Counter(shoes_numbers))
-print(pay_list)
+
